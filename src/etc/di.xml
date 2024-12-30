@@ -9,8 +9,8 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="job_product_feed_delta" xsi:type="object">Infrangible\CatalogProductFeed\Console\Command\Delta</item>
-                <item name="job_product_feed_full" xsi:type="object">Infrangible\CatalogProductFeed\Console\Command\Full</item>
+                <item name="task_product_feed_delta" xsi:type="object">Infrangible\CatalogProductFeed\Console\Command\Delta</item>
+                <item name="task_product_feed_full" xsi:type="object">Infrangible\CatalogProductFeed\Console\Command\Full</item>
             </argument>
         </arguments>
     </type>

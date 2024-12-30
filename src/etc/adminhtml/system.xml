@@ -33,15 +33,8 @@
         </section>
         <section id="task_catalog_product_feed_full" translate="label" type="text" sortOrder="281" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Product Feed (Full)</label>
-            <tab>jobs</tab>
+            <tab>tasks</tab>
             <resource>Infrangible_CatalogProductFeed::config_task_catalog_product_feed_full</resource>
-            <group id="execution" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
-                <label>Execution</label>
-                <field id="cron_expression" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label>Cron Expression</label>
-                    <backend_model>Infrangible\CatalogProductFeed\Job\Delta\Cron\Execution</backend_model>
-                </field>
-            </group>
         </section>
     </system>
 </config>
