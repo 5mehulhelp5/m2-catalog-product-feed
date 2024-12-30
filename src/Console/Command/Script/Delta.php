@@ -49,7 +49,7 @@ class Delta extends Task
                 );
             }
 
-            if ($input->getArgument('force')) {
+            if ($input->getOption('force')) {
                 $task->setForce(true);
             }
         }

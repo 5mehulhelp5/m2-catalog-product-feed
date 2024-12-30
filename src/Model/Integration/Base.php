@@ -67,13 +67,13 @@ abstract class Base implements IIntegration
     protected $stripTagsAttributeCodes = [];
 
     public function __construct(
-        Variables $variableHelper,
-        Arrays $arrayHelper,
+        Variables $variables,
+        Arrays $arrays,
         \Infrangible\Core\Helper\Attribute $eavAttributeHelper,
         Custom $productFeedCustomHelper
     ) {
-        $this->variables = $variableHelper;
-        $this->arrays = $arrayHelper;
+        $this->variables = $variables;
+        $this->arrays = $arrays;
         $this->attributeHelper = $eavAttributeHelper;
         $this->productFeedCustomHelper = $productFeedCustomHelper;
     }

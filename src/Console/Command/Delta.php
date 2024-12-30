@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Infrangible\CatalogProductFeed\Console\Command;
 
 use Infrangible\Task\Console\Command\Task;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
 /**
@@ -20,47 +19,34 @@ class Delta extends Task
         return 'catalog_product_feed_delta';
     }
 
-    protected function getCommandDescription(): string
-    {
-        return 'Process all product feed changes';
-    }
-
     protected function getClassName(): string
     {
         return Script\Delta::class;
     }
 
-    /**
-     * Configures the current command.
-     */
-    protected function configure()
+    protected function getCommandDescription(): string
     {
-        parent::configure();
+        return 'Process all product feed changes';
+    }
 
-        $definition = $this->getDefinition();
+    protected function getCommandDefinition(): array
+    {
+        $commandDefinition = parent::getCommandDefinition();
 
-        $definition->addOption(
-            new InputOption(
-                'integration',
-                null,
-                InputOption::VALUE_OPTIONAL,
-                'Name of integrations to create feed'
-            )
+        $commandDefinition[] = new InputOption(
+            'integration',
+            null,
+            InputOption::VALUE_OPTIONAL,
+            'Name of integrations to create feed'
         );
-        $definition->addOption(
-            new InputOption(
-                'store_id',
-                null,
-                InputOption::VALUE_OPTIONAL,
-                'Id of the store to create feed'
-            )
+
+        $commandDefinition[] = new InputOption(
+            'force',
+            'f',
+            InputOption::VALUE_NONE,
+            'Ignore schedules'
         );
-        $definition->addArgument(
-            new InputArgument(
-                'force',
-                InputArgument::OPTIONAL,
-                'Ignore schedules'
-            )
-        );
+
+        return $commandDefinition;
     }
 }
