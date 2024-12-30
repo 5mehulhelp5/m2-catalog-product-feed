@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<!--
+ * @author      Andreas Knollmann
+ * @copyright   2014-2024 Softwareentwicklung Andreas Knollmann
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+-->
+<config>
+    <custom_fields>
+        <custom_field name="category_names">
+            <label>Category Names</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\CategoryNames</model>
+        </custom_field>
+        <custom_field name="category_urls">
+            <label>Category Paths</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\CategoryUrls</model>
+        </custom_field>
+        <custom_field name="final_price">
+            <label>Final Price</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\FinalPrice</model>
+        </custom_field>
+        <custom_field name="final_price_currency">
+            <label>Final Price with Currency</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\FinalPriceCurrency</model>
+        </custom_field>
+        <custom_field name="image_url">
+            <label>Image Url</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\ImageUrl</model>
+        </custom_field>
+        <custom_field name="parent_sku">
+            <label>Parent SKU</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\ParentSku</model>
+        </custom_field>
+        <custom_field name="price">
+            <label>Price</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\Price</model>
+        </custom_field>
+        <custom_field name="price_currency">
+            <label>Price with Currency</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\PriceCurrency</model>
+        </custom_field>
+        <custom_field name="product_category_urls">
+            <label>Product Category Urls</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\ProductCategoryUrls</model>
+        </custom_field>
+        <custom_field name="product_id">
+            <label>Product Id</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\ProductId</model>
+        </custom_field>
+        <custom_field name="product_url">
+            <label>Product Url</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\ProductUrl</model>
+        </custom_field>
+        <custom_field name="product_url_with_key">
+            <label>Product Url With Key</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\ProductUrlWithKey</model>
+        </custom_field>
+        <custom_field name="small_image_url">
+            <label>Small Image Url</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\SmallImageUrl</model>
+        </custom_field>
+        <custom_field name="special_price">
+            <label>Special Price</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\SpecialPrice</model>
+        </custom_field>
+        <custom_field name="special_price_currency">
+            <label>Special Price with Currency</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\SpecialPriceCurrency</model>
+        </custom_field>
+        <custom_field name="stock_qty">
+            <label>Stock Qty</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\StockQty</model>
+        </custom_field>
+        <custom_field name="thumbnail_url">
+            <label>Thumbnail Url</label>
+            <model>Infrangible\CatalogProductFeed\Model\Attribute\Custom\ThumbnailUrl</model>
+        </custom_field>
+    </custom_fields>
+</config>

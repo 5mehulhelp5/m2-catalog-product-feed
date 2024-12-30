@@ -1,0 +1,35 @@
+{
+    "name": "infrangible/m2-catalog-product-feed",
+    "description": "Infrangible Magento 2 Catalog Product Feed",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "MIT",
+    "keywords": [
+        "Magento"
+    ],
+    "homepage": "https://github.com/infrangible-dev/m2-catalog-product-feed",
+    "authors": [
+        {
+            "name": "Andreas Knollmann",
+            "email": "a.knollmann@seak.dev",
+            "homepage": "https://www.seak.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "magento/framework": "~102.3.5|~103.0.0",
+        "dragonmantank/cron-expression": "~3.4.0",
+        "infrangible/m2-catalog-indexer-flat": "~1.0",
+        "infrangible/m2-core": "~2.12",
+        "infrangible/m2-task": "~1.10|~2.3"
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "Infrangible\\CatalogProductFeed\\": "src"
+        }
+    }
+}

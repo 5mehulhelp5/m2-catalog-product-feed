@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<!--
+ * @author      Andreas Knollmann
+ * @copyright   2014-2024 Softwareentwicklung Andreas Knollmann
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="infrangible_catalogproductfeed" translate="label" type="text" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Product Feed</label>
+            <tab>infrangible</tab>
+            <resource>Infrangible_CatalogProductFeed::config_infrangible_catalogproductfeed</resource>
+            <group id="export" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Limit active Categories to Store</label>
+                <field id="limit_active_categories_to_store" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Export</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+        <section id="task_catalog_product_feed_delta" translate="label" type="text" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Product Feed (Changes)</label>
+            <tab>tasks</tab>
+            <resource>Infrangible_CatalogProductFeed::config_task_catalog_product_feed_delta</resource>
+            <group id="execution" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Execution</label>
+                <field id="cron_expression" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Cron Expression</label>
+                    <backend_model>Infrangible\CatalogProductFeed\Task\Delta\Cron\Execution</backend_model>
+                </field>
+            </group>
+        </section>
+        <section id="task_catalog_product_feed_full" translate="label" type="text" sortOrder="281" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Product Feed (Full)</label>
+            <tab>jobs</tab>
+            <resource>Infrangible_CatalogProductFeed::config_task_catalog_product_feed_full</resource>
+            <group id="execution" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Execution</label>
+                <field id="cron_expression" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Cron Expression</label>
+                    <backend_model>Infrangible\CatalogProductFeed\Job\Delta\Cron\Execution</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
