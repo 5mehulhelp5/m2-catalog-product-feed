@@ -94,7 +94,7 @@ abstract class Base implements IIntegration
      */
     protected function setupAttribute(Attribute $attribute): void
     {
-        $attributeId = $attribute->getId();
+        $attributeId = $this->variables->intValue($attribute->getId());
         $attributeCode = $attribute->getAttributeCode();
         $eavAttributeId = $attribute->getEavAttributeId();
         $customField = $attribute->getCustomField();
@@ -108,7 +108,7 @@ abstract class Base implements IIntegration
         if ($eavAttributeId) {
             $this->addEavAttribute(
                 $attributeId,
-                $this->variables->intValue($eavAttributeId)
+                $this->variables->intValue($this->variables->intValue($eavAttributeId))
             );
         }
 
@@ -230,7 +230,14 @@ abstract class Base implements IIntegration
 
         $this->customFields[ $attributeId ] = $customFieldModel;
 
-        if ($customFieldModel !== false) {
+        if ($customFieldModel === null) {
+            throw new Exception(
+                sprintf(
+                    'Could not find model for custom field: %s',
+                    $customField
+                )
+            );
+        } else {
             foreach ($customFieldModel->requireEavAttributeCodes() as $requireEavAttributeCode) {
                 if (! $this->variables->isEmpty($requireEavAttributeCode)) {
                     $eavAttribute = $this->attributeHelper->getAttribute(
@@ -388,7 +395,7 @@ abstract class Base implements IIntegration
         array $children,
         array $bundled,
         array $grouped
-    ): string {
+    ) {
         $exportValue = null;
 
         if ($this->isCustomField($attributeId)) {
@@ -445,7 +452,7 @@ abstract class Base implements IIntegration
         array $children,
         array $bundled,
         array $grouped
-    ): array {
+    ) {
         return $customField->process(
             $storeId,
             $productData,
@@ -488,13 +495,13 @@ abstract class Base implements IIntegration
         return $value;
     }
 
-    protected function formatValue(int $attributeId, $value): string
+    protected function formatValue(int $attributeId, $value)
     {
         $valueFormat = $this->getValueFormat($attributeId);
 
         if (! $this->variables->isEmpty($valueFormat)) {
             if (is_scalar($value)) {
-                return @sprintf(
+                $value = @sprintf(
                     $valueFormat,
                     $value
                 );
